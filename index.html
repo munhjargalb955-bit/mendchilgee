@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff0f5">
+  <meta name="description" content="Хайр шингэсэн ойн баярын романтик мэндчилгээ.">
+  <title>Чамдаа зориулсан миний бяцхан бэлэг</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Marck+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient-hearts" aria-hidden="true"></div>
+
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Хөгжим тоглуулах" aria-pressed="false">
+    <span class="music-icon" aria-hidden="true">♫</span>
+    <span class="music-state">Хөгжим унтраалттай</span>
+  </button>
+
+  <main id="app">
+    <section id="opening" class="screen active" aria-labelledby="openingTitle">
+      <div class="card opening-card">
+        <div class="gift" aria-hidden="true">
+          <span class="gift-bow gift-bow-left"></span>
+          <span class="gift-bow gift-bow-right"></span>
+          <span class="gift-lid"></span>
+          <span class="gift-box"></span>
+          <span class="gift-ribbon"></span>
+        </div>
+        <p class="eyebrow">Бяцхан гэнэтийн бэлэг</p>
+        <h1 id="openingTitle">Хөөрхөн гүнждээ зориулж<br>бяцхан бэлэг бэлдсэн</h1>
+        <button id="openGift" class="btn btn-primary" type="button">Бэлгээ нээх <span aria-hidden="true">♡</span></button>
+      </div>
+    </section>
+
+    <section id="question" class="screen" aria-labelledby="questionTitle" hidden>
+      <div id="questionCard" class="card question-card">
+        <div class="cat" role="img" aria-label="Инээмсэглэж буй хөөрхөн цагаан муур">
+          <span class="cat-ear cat-ear-left"></span><span class="cat-ear cat-ear-right"></span>
+          <span class="cat-face">
+            <span class="cat-eye cat-eye-left"></span><span class="cat-eye cat-eye-right"></span>
+            <span class="cat-blush cat-blush-left"></span><span class="cat-blush cat-blush-right"></span>
+            <span class="cat-nose"></span><span class="cat-mouth"></span>
+          </span>
+          <span class="cat-body"></span><span class="cat-tail"></span>
+          <span class="cat-heart">♥</span>
+        </div>
+        <p class="eyebrow">Надад асуух зүйл байна...</p>
+        <h2 id="questionTitle">Чи надад хайртай юу? <span aria-hidden="true">❤️</span></h2>
+        <p class="subtext">Сайн бодож сонгоорой.</p>
+        <div class="answer-area">
+          <button id="yesButton" class="btn btn-yes" type="button">ТИЙМ <span aria-hidden="true">♥</span></button>
+          <button id="noButton" class="btn btn-no" type="button">ҮГҮЙ</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="celebration" class="screen" aria-labelledby="celebrationTitle" hidden>
+      <div class="card celebration-card">
+        <div class="big-heart" aria-hidden="true">♥</div>
+        <p class="eyebrow">Баярлалаа</p>
+        <h2 id="celebrationTitle">Би ч гэсэн чамдаа хайртай шүү <span aria-hidden="true">❤️</span></h2>
+        <p class="romantic-message">Үргэлж миний хажууд байдагт баярлалаа.<br>Чи миний өдрүүдийг гэрэлтүүлж, амьдралыг минь аз жаргалтай болгодог.<br>Чамдаа маш их хайртай.</p>
+        <button id="seeMemories" class="btn btn-primary" type="button">Дурсамжуудаа үзэх <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section id="memories" class="screen" aria-labelledby="memoriesTitle" hidden>
+      <div class="card memories-card">
+        <p class="eyebrow">Бидний бяцхан түүх</p>
+        <h2 id="memoriesTitle">Нандин дурсамжууд</h2>
+        <div id="slideshow" class="slideshow" aria-roledescription="carousel" aria-label="Бидний дурсамжууд">
+          <div class="slides">
+            <figure class="slide active" aria-hidden="false">
+              <div class="photo-frame"><img src="images/photo1.jpg" alt="Бидний хамтдаа өнгөрүүлсэн анхны нандин дурсамж" draggable="false"></div>
+              <figcaption>Чамтай учирсан минь миний хамгийн гоё аз жаргал ❤️</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo2.jpg" alt="Бидний хамтдаа өнгөрүүлсэн аз жаргалтай өдөр" draggable="false"></div>
+              <figcaption>Чиний хажууд энгийн өдөр хүртэл онцгой ✨</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo5.jpg" alt="Бидний хамгийн дуртай дурсамжуудын нэг" draggable="false"></div>
+              <figcaption>Миний хамгийн дуртай газар бол чиний хажууд 🌷</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo6.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Чиний инээмсэглэл миний өдрийг гэрэлтүүлдэг 💕</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo4.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Хамт байх мөч бүхэн надад нандин 💗</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo7.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Чамтай байхад би хамгийн жаргалтай 🫶</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo8.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Бид хоёрын жижигхэн ертөнц надад хамгийн үнэтэй🌸 </figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo9.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Чи миний амьдралын хамгийн дулаахан хүн ☀️</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo10.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Чамтай хамт байхад бүх зүйл сайхан 💞</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo11.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Энэ мөчийг би үргэлж санаж явна 🌍</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo12.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Чамдаа өдөр ирэх тусам улам их хайртай 💖</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo13.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Чиний дэргэд би өөрөөрөө байж чаддаг 🤍</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo14.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Чамтай бүтээсэн дурсамж бүр миний эрдэнэ ✨</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo15.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Миний зүрх үргэлж чамайг сонгоно ❤️</figcaption>
+            </figure>
+            <figure class="slide" aria-hidden="true">
+              <div class="photo-frame"><img src="images/photo16.jpg" alt="Бидний хайраар дүүрэн нандин дурсамж" draggable="false"></div>
+              <figcaption>Цаашдаа ч хамтдаа олон сайхан дурсамж бүтээе 💕</figcaption>
+            </figure>
+            <figure class="slide video-slide" aria-hidden="true">
+              <div class="video-frame">
+                <video controls playsinline preload="metadata" aria-label="Бидний нандин дурсамжийн бичлэг">
+                  <source src="video/video1.mp4" type="video/mp4">
+                  Таны хөтөч энэ бичлэгийг тоглуулах боломжгүй байна.
+                </video>
+              </div>
+              <figcaption>Чамтай өнгөрүүлсэн энэ мөч зүрхэнд минь үргэлж үлдэнэ 🎬❤️</figcaption>
+            </figure>
+          </div>
+          <button id="prevSlide" class="slide-nav prev" type="button" aria-label="Өмнөх дурсамж">‹</button>
+          <button id="nextSlide" class="slide-nav next" type="button" aria-label="Дараагийн дурсамж">›</button>
+        </div>
+        <div id="slideDots" class="slide-dots" aria-label="Дурсамж сонгох"></div>
+        <p class="swipe-hint">Хажуу тийш болгож зургаа солиж болно шүү хөөрхөнөө</p>
+        <button id="finalMessage" class="btn btn-primary" type="button">Дараагийн хуудас <span aria-hidden="true">♡</span></button>
+      </div>
+    </section>
+
+    <section id="final" class="screen" aria-labelledby="finalTitle" hidden>
+      <div class="card final-card">
+        <div class="heart-halo" aria-hidden="true"><span>♥</span><span>♥</span><span>♥</span></div>
+        <p class="eyebrow">Бүх хайраа чамдаа</p>
+        <h2 id="finalTitle" class="script-title">Гэртээ тавтай морил ❤️</h2>
+        <p class="final-copy">Гүнжээ байхгүйд маш их санасан шүү.<br>Чамайг ирэхэд миний хамгийн хайртай хүн төдийгүй, аз жаргал минь эргээд ирж байгаа юм шиг санагдаж байна.Чамайгаа ирэхийг өдөр бүр хүлээсэн шүү. Маш их хайртай.</p>
+        <p class="signature">Үүрд чинийх<br><strong>Хайрт залуугаас чинь</strong></p>
+        <button id="replay" class="btn btn-secondary" type="button">Дахин эхлүүлэх <span aria-hidden="true">↻</span></button>
+      </div>
+    </section>
+  </main>
+
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+  <div id="celebrationHearts" aria-hidden="true"></div>
+  <audio id="backgroundMusic" src="audio/music.mp3" preload="metadata" loop></audio>
+  <script src="script.js" defer></script>
+</body>
+</html>
