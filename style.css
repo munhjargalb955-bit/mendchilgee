@@ -168,6 +168,16 @@ figcaption { padding: 14px 40px 4px; color: var(--ink); font-size: .95rem; font-
 .signature { margin: 25px 0 30px; color: var(--ink); font-size: 1.05rem; line-height: 1.65; }
 .signature strong { color: var(--red-dark); font-family: "Marck Script", cursive; font-size: 1.8rem; font-weight: 400; }
 
+.relationship-counter { position: fixed; top: max(14px, env(safe-area-inset-top)); left: max(14px, env(safe-area-inset-left)); z-index: 100; display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 7px 13px 7px 8px; border: 1px solid rgba(255,255,255,.92); border-radius: 999px; color: var(--red-dark); background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,234,241,.88)); box-shadow: 0 8px 24px rgba(112,59,80,.15); cursor: pointer; backdrop-filter: blur(10px); touch-action: manipulation; transition: transform .2s ease, box-shadow .2s ease; }
+.relationship-counter:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(112,59,80,.19); }
+.relationship-counter:active { transform: scale(.97); }
+.relationship-counter:focus-visible { outline: 3px solid #7a4ef3; outline-offset: 3px; }
+.counter-heart { display: grid; place-items: center; flex: 0 0 auto; width: 33px; height: 33px; border-radius: 50%; color: #fff; background: linear-gradient(135deg, #ff9ab5, #e9657c); box-shadow: 0 5px 13px rgba(217,82,102,.24); animation: heartbeat 1.8s ease-in-out infinite; }
+.counter-copy { display: grid; gap: 1px; text-align: left; line-height: 1.15; }
+.counter-label { color: #a56d80; font-size: .58rem; font-weight: 700; letter-spacing: .05em; }
+.counter-value { color: var(--red-dark); font-size: .72rem; font-weight: 800; white-space: nowrap; }
+.relationship-counter.flipping .counter-copy { animation: counter-flip .32s ease; }
+
 .music-toggle { position: fixed; top: max(14px, env(safe-area-inset-top)); right: max(14px, env(safe-area-inset-right)); z-index: 100; display: flex; align-items: center; gap: 7px; min-height: 42px; padding: 8px 13px; border: 1px solid rgba(255,255,255,.9); border-radius: 999px; color: var(--red-dark); background: rgba(255,255,255,.8); box-shadow: 0 7px 22px rgba(112, 59, 80, .13); font-size: .77rem; font-weight: 800; cursor: pointer; backdrop-filter: blur(10px); }
 .music-icon { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; color: #fff; background: var(--red-soft); }
 .music-toggle.playing .music-icon { animation: pulse-note 1.5s ease-in-out infinite; }
@@ -176,6 +186,7 @@ figcaption { padding: 14px 40px 4px; color: var(--ink); font-size: .95rem; font-
 .burst-heart { z-index: 20; color: rgba(239, 111, 127, .7); animation: burst-rise 3.8s ease-out forwards; }
 #confettiCanvas { position: fixed; inset: 0; z-index: 30; width: 100%; height: 100%; pointer-events: none; }
 
+@keyframes counter-flip { 50% { transform: translateY(-4px); opacity: 0; } }
 @keyframes gift-float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-9px) rotate(1deg); } }
 @keyframes heartbeat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.13); } 30% { transform: scale(1); } 45% { transform: scale(1.08); } }
 @keyframes blink { 0%,45%,49%,100% { transform: scaleY(1); } 47% { transform: scaleY(.08); } }
@@ -185,6 +196,12 @@ figcaption { padding: 14px 40px 4px; color: var(--ink); font-size: .95rem; font-
 @keyframes burst-rise { 0% { transform: translateY(0) scale(.5) rotate(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(-115vh) scale(1.4) rotate(45deg); opacity: 0; } }
 
 @media (max-width: 360px) {
+  .relationship-counter { left: 8px; padding-right: 9px; gap: 6px; }
+  .counter-heart { width: 30px; height: 30px; }
+  .counter-label { font-size: .52rem; }
+  .counter-value { font-size: .65rem; }
+  .music-toggle { right: 8px; padding: 8px; }
+  .music-state { display: none; }
   .screen { padding-inline: 12px; }
   .card { padding-inline: 18px; border-radius: 25px; }
   .cat { transform: scale(.88); margin-top: -15px; margin-bottom: -2px; }

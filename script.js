@@ -3,6 +3,9 @@
 const screens = [...document.querySelectorAll(".screen")];
 const music = document.getElementById("backgroundMusic");
 const musicToggle = document.getElementById("musicToggle");
+const relationshipCounter = document.getElementById("relationshipCounter");
+const counterLabel = document.getElementById("counterLabel");
+const counterValue = document.getElementById("counterValue");
 const noButton = document.getElementById("noButton");
 const yesButton = document.getElementById("yesButton");
 const questionCard = document.getElementById("questionCard");
@@ -13,6 +16,36 @@ let musicWanted = false;
 let currentSlide = 0;
 let confettiFrame = null;
 let noAttempts = 0;
+let showingRelationshipDate = false;
+
+function getRelationshipDays() {
+  const now = new Date();
+  const todayUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  const relationshipStartUtc = Date.UTC(2022, 10, 4);
+  return Math.floor((todayUtc - relationshipStartUtc) / 86400000) + 1;
+}
+
+function updateRelationshipCounter() {
+  relationshipCounter.classList.remove("flipping");
+  void relationshipCounter.offsetWidth;
+  relationshipCounter.classList.add("flipping");
+
+  if (showingRelationshipDate) {
+    counterLabel.textContent = "Бидний эхлэл";
+    counterValue.textContent = "2022.11.04";
+    relationshipCounter.setAttribute("aria-label", "Хамт байсан өдрийн тоолуур руу буцах");
+  } else {
+    counterLabel.textContent = "Бидний хайр";
+    counterValue.textContent = `${getRelationshipDays()} өдөр хамтдаа`;
+    relationshipCounter.setAttribute("aria-label", "Бидний үерхсэн огноог харах");
+  }
+  relationshipCounter.setAttribute("aria-pressed", String(showingRelationshipDate));
+}
+
+relationshipCounter.addEventListener("click", () => {
+  showingRelationshipDate = !showingRelationshipDate;
+  updateRelationshipCounter();
+});
 
 function showScreen(id) {
   const current = screens.find((screen) => !screen.hidden);
@@ -292,6 +325,7 @@ document.querySelectorAll("video").forEach((video) => {
 });
 
 createAmbientHearts();
+updateRelationshipCounter();
 updateSlides();
 updateMusicButton();
 music.volume = 0.2;
